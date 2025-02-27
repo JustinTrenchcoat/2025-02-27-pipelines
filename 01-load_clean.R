@@ -6,11 +6,9 @@ library(janitor)
 
 data <- read.csv("data/titanic.csv")
 
-data
-
 # clean data
 data <- janitor::clean_names(data)
 
-data
-
 write_csv(data, "data/titanic_clean.csv")
+
+print("finished script 1")
