@@ -1,21 +1,21 @@
 library(readr)
-library(broom)
 library(ggplot2)
 library(docopt)
 
-"Usage:03-analyze.R --model=<model> --output_coef=<output_coef> 
---output_fig=<output_fig>" -> doc
+"
+Usage: 04-model.R --model=<model> --output_coef=<output_coef> --output_fig=<output_fig>
+" -> doc
 
 opt <- docopt(doc)
 
-
-# load model
 model <- read_rds(opt$model)
+
 summary(model)
 
 # results
 
 coef <- broom::tidy(model)
+coef
 
 # process results
 
@@ -23,6 +23,8 @@ coef <- coef |>
   dplyr::mutate(or = exp(estimate))
 
 coef
+
+write_csv(coef, opt$output_coef)
 
 # plot results
 
