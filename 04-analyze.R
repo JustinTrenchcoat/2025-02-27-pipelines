@@ -1,10 +1,16 @@
 library(readr)
 library(broom)
 library(ggplot2)
+library(docopt)
+
+"Usage:03-analyze.R --model=<model> --output_coef=<output_coef> 
+--output_fig=<output_fig>" -> doc
+
+doc <- docopt(doc)
 
 
 # load model
-model <- read_rds("output/model.RDS")
+model <- read_rds(opt$model)
 summary(model)
 
 # results
@@ -26,3 +32,4 @@ ggplot(coef |> dplyr::filter(term != "(Intercept)"), aes(x = term, y = or)) +
   coord_flip() +
   geom_hline(yintercept = 1)
 
+ggsave(opt$output_fig)

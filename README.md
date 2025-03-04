@@ -9,3 +9,5 @@ Rscript 03-model.R
 Rscript 04-analyze.R
 
 ```
+
+2025-03-04 Notes
