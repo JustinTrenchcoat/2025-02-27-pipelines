@@ -6,7 +6,7 @@ library(docopt)
 "Usage:03-analyze.R --model=<model> --output_coef=<output_coef> 
 --output_fig=<output_fig>" -> doc
 
-doc <- docopt(doc)
+opt <- docopt(doc)
 
 
 # load model
