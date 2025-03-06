@@ -3,7 +3,6 @@ output/*
 !data/clean/.gitkeep
 !output/.gitkeep
 *.pdf
-*.html
 *_files/*
 
 # History files

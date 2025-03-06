@@ -11,3 +11,5 @@ Rscript 04-analyze.R
 ```
 
 2025-03-04 Notes
+
+run `make undex.html` in terminal would trigger `Makefile` to run, and produce an `index.html`
