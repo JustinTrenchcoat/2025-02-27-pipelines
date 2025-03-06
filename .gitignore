@@ -1,10 +1,10 @@
-data/clean
-output/
+data/clean/*
+output/*
 !data/clean/.gitkeep
 !output/.gitkeep
 *.pdf
 *.html
-*_files/
+*_files/*
 
 # History files
 .Rhistory
