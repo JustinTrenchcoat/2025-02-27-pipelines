@@ -7,10 +7,10 @@ output/model.RDS: 03-model.R data/clean/titanic_clean.csv
 output/coef.csv output/fig.png: 04-analyze.R output/model.RDS
 	Rscript 04-analyze.R --model=output/model.RDS --output_coef=output/coef.csv --output_fig=output/fig.png
 
-index.html: report.qmd output/coef.csv output/fig.png
-	quarto render report.qmd --output index.html
+index.html: report/report.qmd output/coef.csv output/fig.png
+	quarto render report/report.qmd --output index.html
 	# quarto render report.qmd
-	# 
+	# mv report.html index.html
 
 clean:
 	rm -f output/*
